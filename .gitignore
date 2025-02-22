@@ -36,6 +36,9 @@ override.tf.json
 .terraformrc
 terraform.rc
 
+.terragrunt-cache
+.terragrunt.locl.hcl
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

@@ -13,3 +13,8 @@ echo "Database is ready!"
 
 echo "Running Alembic migrations..."
 alembic upgrade head
+
+cd /terraform_terragrunt_postgres/environments/dev
+terragrunt init
+terragrunt plan
+terragrunt apply

@@ -14,11 +14,11 @@ inputs = {
   product_data = {
     PRODUCT_1 = {
       product_name = "product_1",
-      product_description = "first product also modified text"
+      product_description = "first product"
     },
     PRODUCT_2 = {
       product_name = "product_2",
-      product_description = "second product modified text"
+      product_description = "second product"
     }
   }
 }
