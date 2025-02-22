@@ -20,9 +20,8 @@ services:
       dockerfile: Dockerfile
     container_name: terraform_runner
     restart: unless-stopped
-    working_dir: /workspace
     volumes:
-      - .:/workspace
+      - .:/terraform_terragrunt_postgres
     entrypoint: ["/bin/sh"]
     command: ["-c", "tail -f /dev/null"]
 

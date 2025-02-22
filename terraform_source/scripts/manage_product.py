@@ -36,7 +36,7 @@ DECLARE
     __product_key CHAR(32);
 
 BEGIN
-    __product_key = MD5(CAST(:field0 || random() as TEXT));
+    __product_key = MD5(CAST(:field0 as TEXT));
     if terraform_flag = 'N' THEN
     IF EXISTS(
             SELECT 1 from {table_schema}.{table_name} where product_key = __product_key

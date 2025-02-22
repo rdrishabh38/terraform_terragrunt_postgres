@@ -5,17 +5,6 @@ variable "product_data" {
     product_name = string
     product_description = string
   }))
-
-  default = {
-    PRODUCT_1 = {
-      product_name = "product_1",
-      product_description = "first product"
-    },
-    PRODUCT_2 = {
-      product_name = "product_2",
-      product_description = "second product modified text"
-    }
-  }
 }
 
 variable "schema_for_product_table" {
