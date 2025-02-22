@@ -1,0 +1,30 @@
+version: "3.3"
+
+services:
+  postgres_db:
+    image: postgres:15
+    container_name: postgres_master
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: master_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - pg_master_data:/var/lib/postgresql/data
+
+  terraform_runner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: terraform_runner
+    restart: unless-stopped
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+    entrypoint: ["/bin/sh"]
+    command: ["-c", "tail -f /dev/null"]
+
+volumes:
+  pg_master_data:
