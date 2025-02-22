@@ -12,6 +12,9 @@ class Product(Base):
     __tablename__ = "product"
     __table_args__ = (
         Index("product_PK_index", "product_key"),
+        Index("identify_product",
+              "product_key",
+              "current_record_indicator"),
         {
             "schema": "core",
             "comment": "product table in core schema"

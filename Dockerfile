@@ -46,5 +46,8 @@ RUN chmod +x /terraform_terragrunt_postgres/entrypoint.sh
 # Set the entrypoint so that migrations run at container startup
 ENTRYPOINT ["/terraform_terragrunt_postgres/entrypoint.sh"]
 
+RUN chmod +x /terraform_terragrunt_postgres/set_env.sh
+
+RUN ./terraform_terragrunt_postgres/set_env.sh
 # Keep the container running
 CMD ["tail", "-f", "/dev/null"]
