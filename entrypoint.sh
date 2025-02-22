@@ -7,5 +7,7 @@ while ! nc -z postgres_db 5432; do
 done
 echo "Database is ready!"
 
+. /terraform_terragrunt_postgres/set_env.sh
+
 echo "Running Alembic migrations..."
 alembic upgrade head
