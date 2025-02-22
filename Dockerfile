@@ -48,6 +48,6 @@ ENTRYPOINT ["/terraform_terragrunt_postgres/entrypoint.sh"]
 
 RUN chmod +x /terraform_terragrunt_postgres/set_env.sh
 
-RUN ./terraform_terragrunt_postgres/set_env.sh
+RUN source /terraform_terragrunt_postgres/set_env.sh
 # Keep the container running
 CMD ["tail", "-f", "/dev/null"]
