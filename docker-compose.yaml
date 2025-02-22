@@ -22,8 +22,6 @@ services:
     restart: unless-stopped
     volumes:
       - .:/terraform_terragrunt_postgres
-    entrypoint: ["/bin/sh"]
-    command: ["-c", "tail -f /dev/null"]
 
 volumes:
   pg_master_data:
