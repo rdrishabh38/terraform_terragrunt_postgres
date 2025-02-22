@@ -2,7 +2,7 @@
 FROM python:3.11-slim
 
 # Install git to clone the repository
-RUN apt-get update && apt-get install -y git
+RUN apt-get update && apt-get install -y git netcat-openbsd
 
 # Clone the latest project from GitHub
 RUN git clone https://github.com/rdrishabh38/terraform_terragrunt_postgres.git /terraform_terragrunt_postgres
@@ -39,6 +39,12 @@ RUN venv/bin/pip install --no-cache-dir -r requirements.txt
 
 # Ensure the virtual environment's binaries are used by default
 ENV PATH="/terraform_terragrunt_postgres/venv/bin:$PATH"
+
+# RUN the entrypoint script
+RUN chmod +x /terraform_terragrunt_postgres/entrypoint.sh
+
+# Set the entrypoint so that migrations run at container startup
+ENTRYPOINT ["/terraform_terragrunt_postgres/entrypoint.sh"]
 
 # Keep the container running
 CMD ["tail", "-f", "/dev/null"]
