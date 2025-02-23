@@ -30,15 +30,15 @@ RUN curl -Lo /usr/local/bin/terragrunt https://github.com/gruntwork-io/terragrun
     chmod +x /usr/local/bin/terragrunt
 
 # Create a Python virtual environment at /venv
-RUN python -m venv venv
+RUN python -m venv /venv
 
-RUN venv/bin/pip install --upgrade pip
+RUN /venv/bin/pip install --upgrade pip
 
 # Install dependencies inside the virtual environment
-RUN venv/bin/pip install --no-cache-dir -r requirements.txt
+RUN /venv/bin/pip install --no-cache-dir -r requirements.txt
 
 # Ensure the virtual environment's binaries are used by default
-ENV PATH="/terraform_terragrunt_postgres/venv/bin:$PATH"
+ENV PATH="/venv/bin:$PATH"
 
 # RUN the entrypoint script
 RUN chmod +x /terraform_terragrunt_postgres/entrypoint.sh
