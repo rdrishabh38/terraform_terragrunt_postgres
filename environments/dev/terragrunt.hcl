@@ -4,13 +4,13 @@ include {
 }
 
 inputs = {
-  env_vars = {
-    db_host     = "postgres_db"   # Use the service name as defined in docker-compose.yaml
-    db_port     = "5432"          # Internal port of the Postgres container
-    db_username = "admin"
-    db_password = "admin"
-    db_name     = "master_db"
-  }
+#  env_vars = {
+#    db_host     = "postgres_db"   # Use the service name as defined in docker-compose.yaml
+#    db_port     = "5432"          # Internal port of the Postgres container
+#    db_username = "admin"
+#    db_password = "admin"
+#    db_name     = "master_db"
+#  }
   product_data = {
     PRODUCT_1 = {
       product_name = "product_1",

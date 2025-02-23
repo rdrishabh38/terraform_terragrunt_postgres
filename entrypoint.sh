@@ -1,6 +1,8 @@
 #!/bin/sh
 set -e
 
+. /terraform_terragrunt_postgres/set_env.sh
+
 export TF_INPUT=0
 
 echo "Waiting for database to become available..."
