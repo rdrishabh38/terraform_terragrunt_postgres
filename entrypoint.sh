@@ -18,7 +18,7 @@ echo "Running Alembic migrations..."
 
 cd /terraform_terragrunt_postgres/environments/dev
 
-terragrunt init
+terragrunt init --reconfigure
 
 terragrunt plan
 
