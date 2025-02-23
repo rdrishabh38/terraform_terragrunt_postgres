@@ -22,7 +22,7 @@ terragrunt init
 
 terragrunt plan
 
-terragrunt apply
+terragrunt apply --auto-approve
 
 # Keep container running (if needed)
 tail -f /dev/null
