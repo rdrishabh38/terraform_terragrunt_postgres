@@ -12,7 +12,7 @@ echo "Database is ready!"
 # . /terraform_terragrunt_postgres/set_env.sh
 
 echo "Running Alembic migrations..."
-/terraform_terragrunt_postgres/venv/bin/alembic upgrade head
+python -m alembic upgrade head
 
 cd /terraform_terragrunt_postgres/environments/dev
 
