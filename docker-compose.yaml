@@ -23,5 +23,5 @@ services:
 #    volumes:
 #      - .:/terraform_terragrunt_postgres
 
-volumes:
-  pg_master_data:
+#volumes:
+#  pg_master_data:
