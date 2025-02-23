@@ -21,4 +21,5 @@ inputs = {
       product_description = "second product"
     }
   }
+  working_dir = "/terraform_terragrunt_postgres/terraform_source"
 }

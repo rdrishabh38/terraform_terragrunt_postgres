@@ -1,7 +1,6 @@
 variable "working_dir" {
   description = "working directory for the code"
   type = string
-  default = "/mnt/e/Code/terraform_terragrunt_postgres/terraform_source/"
 }
 
 
