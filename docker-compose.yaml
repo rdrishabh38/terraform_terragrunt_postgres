@@ -11,8 +11,8 @@ services:
       POSTGRES_DB: master_db
     ports:
       - "5433:5432"
-    volumes:
-      - pg_master_data:/var/lib/postgresql/data
+#    volumes:
+#      - pg_master_data:/var/lib/postgresql/data
 
   terraform_runner:
     build:
@@ -20,8 +20,8 @@ services:
       dockerfile: Dockerfile
     container_name: terraform_runner
     restart: unless-stopped
-    volumes:
-      - .:/terraform_terragrunt_postgres
+#    volumes:
+#      - .:/terraform_terragrunt_postgres
 
 volumes:
   pg_master_data:
